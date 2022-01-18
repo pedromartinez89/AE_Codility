@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "91f69355-c924-414b-9fbe-05063fbf53ca",
+		"name": "ArticlesApi_Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateArticle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":\"article1\",\r\n    \"Title\":\"The article 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:64861/api/Articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64861",
+					"path": [
+						"api",
+						"Articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateWithNoTitle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":\"article1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:64861/api/Articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64861",
+					"path": [
+						"api",
+						"Articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteArtilce",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:64861/api/Articles/a1bc90e1-1f71-4b21-be39-262d66b1ba05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64861",
+					"path": [
+						"api",
+						"Articles",
+						"a1bc90e1-1f71-4b21-be39-262d66b1ba05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditArticle",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\":\"New Title for article\",\r\n    \"Text\":\"eddited text\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:64861/api/Articles/a1bc90e1-1f71-4b21-be39-262d66b1ba05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64861",
+					"path": [
+						"api",
+						"Articles",
+						"a1bc90e1-1f71-4b21-be39-262d66b1ba05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllArticles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:64861/api/Articles/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64861",
+					"path": [
+						"api",
+						"Articles",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArticleById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:64861/api/Articles/a1bc90e1-1f71-4b21-be39-262d66b1ba04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64861",
+					"path": [
+						"api",
+						"Articles",
+						"a1bc90e1-1f71-4b21-be39-262d66b1ba04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNonExistentArticle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:64861/api/Articles/a1bc90e1-1f71-4b21-be39-262d66b1ba01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64861",
+					"path": [
+						"api",
+						"Articles",
+						"a1bc90e1-1f71-4b21-be39-262d66b1ba01"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

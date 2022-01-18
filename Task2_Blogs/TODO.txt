@@ -1,0 +1,42 @@
+﻿BLOGSENTITY:
+
+1 Blogs should be stored in a table with the name blogs : ok - use [Table("Blogs")] attribute. from ComponentModel.DataAnnotations.Schema;
+2 all fields are mandatory : ok - use   [Required] dataannotation
+3 The column that stores BlogEntity.BlogId should be called blog_Id : ok- use  [Column("blog_id")] dataannotation
+4 Name may not be longer than 50 or shorter than 10 characters: ok - use [MaxLength(50)] and  [MinLength(10)]
+5 Articles should be a navigation  property and shuld provide access to all post for a given blog : ok. using include or enabling lazy loading in ef core
+6 BlogEntity.IsActive:
+	-if this property is set to true, then in a database it should be save as blog is active otherwise as blog is not active
+	-conversion in the oposite direction should be possible
+		i,e: if the value in the database is "Blog is Active" then the blog.IsActive property should be true; otherwise false.
+
+
+POSTENTITY: 
+
+1. Post should be stored in a table with the name Articles. ok- use [Table("Articles")]
+2. it should not be possible to define a post without a blog ok: require in parentId
+3. all fields except updated are mandatory ok. [Required]
+4. The column that stores PostEntity.PostId should be called post_id ok - [Column("Post_id")]
+5. Name may not be longer than 50 or shorter than 10 characters  ok  [Required, MaxLength(50), MinLength(10)]
+6. content may not be longer than 1000 characters: ok -  [StringLength(1000)]
+7. ParentId
+	-ParentId should be a navigation Property and should point to the identifier of the blog for witch the given post was written
+	-the column that stores Postentity.ParentId should be called blog_id: Ok [Required, Column("blog_id")]
+
+General requirements:
+
+1. Do not change names of properties 
+2. if you try to use blogs context you will get "the entity type "xxx" requires a primary key to be defined. Fix this. 
+3. if possible all the validations should be forced on the application level and on the database level 
+	i.e: if a property is mandatory: then a validationexception should be thrown when the dbcontext.savechanges method is excecuted
+	and a column in a database should be not nullable
+4. if a property must be of a given length then it can be validated only on the application level.
+
+Hints: 
+
+1. start by fixing a problem with primary keys
+2. to score points for validations (e.g. content canot be longer than 1000) start by overriding the savechanges method
+3. system.componentmodel.DataAnnotation.validator can be usefull
+
+
+

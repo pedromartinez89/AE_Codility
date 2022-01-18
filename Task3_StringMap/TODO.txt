@@ -1,0 +1,4 @@
+﻿1. your goal is to implement a custom collection with a simplified interface.
+2. your class should be called StringMap and should allow users to store a collection of pairs of the form <key,value>
+3. the key will allways be a string and the value can be any reference type.
+String Map does not have to be thread-safehowever it must implement the following interface; IStringMap.cs

@@ -1,0 +1,78 @@
+﻿
+@model IEnumerable<Front.Models.Article>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Articles</h2><p>
+    the crud operations will not be reflected in this list, because there is no database in "task 1".
+    <b>
+        this client frontend only help you to call the api, whre the crud is implemented using the injected mock repository
+        as it was requested
+    </b> (another option could be using any type of software such as postman)
+</p>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
+<br />
+<h2>For postman use: </h2>
+<p>
+    <b>CREATE:</b> http://localhost:port/api/articles (use POST method with Json body):
+    {"Title":"Hello World", "Text":"the text"}
+</p>
+<p>
+    <b>DELETE:</b> http://localhost:port/api/articles/387ecbbf-90e0-4b72-8768-52c583fc715b (Use delete method)
+</p>
+<p>
+    <b>EDIT:</b> http://localhost:port/api/articles/387ecbbf-90e0-4b72-8768-52c583fc715b (use PUT method with Json body):
+    {"Title":"Hello World eddited", "Text":"the text eddited"}
+</p>
+<p>
+    <b>GET ALL:</b> http://localhost:port/api/Articles (Use delete method)
+</p>
+<p>
+    <b>GET BY GUID:</b> http://localhost:port/api/Articles/387ecbbf-90e0-4b72-8768-52c583fc715b (use GET method)
+</p>

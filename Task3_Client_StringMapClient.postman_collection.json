@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "01ddee2c-e6ef-4a3f-96f8-d68b2b219e81",
+		"name": "StringMapClient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddElement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Ringo\",\r\n        \"age\": 2\r\n    },\r\n    {\r\n        \"name\": \"Mei\",\r\n        \"age\": 4\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9506/api/stringmap",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9506",
+					"path": [
+						"api",
+						"stringmap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveElement",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"NewDog\",\r\n        \"age\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9506/api/stringmap",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9506",
+					"path": [
+						"api",
+						"stringmap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetExistingElement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "GetDefaultValue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "AddExistingKeyElement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Ringo\",\r\n        \"age\": 2\r\n    },\r\n    {\r\n        \"name\": \"Mei\",\r\n        \"age\": 4\r\n    },\r\n    {\r\n        \"name\": \"Mei\",\r\n        \"age\": 8\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9506/api/stringmap",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9506",
+					"path": [
+						"api",
+						"stringmap"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

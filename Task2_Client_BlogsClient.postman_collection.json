@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "99f3858a-27e7-4848-9765-5ae2878d3647",
+		"name": "BlogsClient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllBlogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:48487/api/Blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "48487",
+					"path": [
+						"api",
+						"Blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBlogById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:48487/api/Blogs/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "48487",
+					"path": [
+						"api",
+						"Blogs",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddBlog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\": \"new blog\",\r\n    \"isActive\": true,\r\n    \"articles\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:48487/api/Blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "48487",
+					"path": [
+						"api",
+						"Blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBlog",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:48487/api/Blogs/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "48487",
+					"path": [
+						"api",
+						"Blogs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateBlog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
